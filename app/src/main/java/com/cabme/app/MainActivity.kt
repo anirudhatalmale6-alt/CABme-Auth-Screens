@@ -1,6 +1,5 @@
 package com.cabme.app
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -13,7 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.rememberNavController
 import com.cabme.app.auth.FacebookAuthHelper
-import com.cabme.app.auth.FacebookSignInResult
 import com.cabme.app.auth.GoogleAuthHelper
 import com.cabme.app.auth.GoogleSignInResult
 import com.cabme.app.navigation.NavGraph
@@ -92,11 +90,5 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-    }
-
-    @Deprecated("Deprecated in Java")
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        facebookAuthHelper.callbackManager.onActivityResult(requestCode, resultCode, data)
     }
 }
