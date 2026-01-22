@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- CAB text in gold -->
+    <path
+        android:fillColor="#D4AF37"
+        android:pathData="M30,58 L33,50 L37,58 L35,58 L34,56 L32,56 L31,58 Z M33,52 L32.5,54 L33.5,54 Z" />
+
+    <!-- Car icon -->
+    <path
+        android:fillColor="#D4AF37"
+        android:pathData="M40,42 L68,42 L72,50 L76,50 L76,58 L72,58 L72,56 C72,54 70,52 68,52 C66,52 64,54 64,56 L44,56 C44,54 42,52 40,52 C38,52 36,54 36,56 L32,56 L32,50 L36,50 Z" />
+
+    <!-- Left wheel -->
+    <circle
+        android:fillColor="#D4AF37"
+        android:cx="40"
+        android:cy="56"
+        android:r="4" />
+
+    <!-- Right wheel -->
+    <circle
+        android:fillColor="#D4AF37"
+        android:cx="68"
+        android:cy="56"
+        android:r="4" />
+
+    <!-- me text -->
+    <path
+        android:fillColor="#B8860B"
+        android:pathData="M72,58 L72,66 L74,66 L74,62 L76,64 L78,62 L78,66 L80,66 L80,58 L78,58 L76,60 L74,58 Z" />
+
+</vector>
