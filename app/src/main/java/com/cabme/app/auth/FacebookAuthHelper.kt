@@ -1,6 +1,7 @@
 package com.cabme.app.auth
 
 import android.app.Activity
+import android.content.Intent
 import android.util.Log
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
@@ -61,9 +62,12 @@ class FacebookAuthHelper(private val activity: Activity) {
 
         LoginManager.getInstance().logInWithReadPermissions(
             activity,
-            callbackManager,
             listOf("email", "public_profile")
         )
+    }
+
+    fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        callbackManager.onActivityResult(requestCode, resultCode, data)
     }
 
     fun signOut() {
