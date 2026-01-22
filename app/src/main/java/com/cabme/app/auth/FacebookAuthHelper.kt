@@ -1,15 +1,14 @@
 package com.cabme.app.auth
 
-import android.app.Activity
-import android.content.Intent
 import android.util.Log
+import androidx.activity.result.ActivityResultRegistryOwner
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
 import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
 
-class FacebookAuthHelper(private val activity: Activity) {
+class FacebookAuthHelper(private val activityResultRegistryOwner: ActivityResultRegistryOwner) {
 
     val callbackManager: CallbackManager = CallbackManager.Factory.create()
 
@@ -61,13 +60,10 @@ class FacebookAuthHelper(private val activity: Activity) {
         this.onError = onError
 
         LoginManager.getInstance().logInWithReadPermissions(
-            activity,
+            activityResultRegistryOwner,
+            callbackManager,
             listOf("email", "public_profile")
         )
-    }
-
-    fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        callbackManager.onActivityResult(requestCode, resultCode, data)
     }
 
     fun signOut() {
