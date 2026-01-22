@@ -1,5 +1,6 @@
 package com.cabme.app.ui.components
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -27,14 +28,17 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.cabme.app.R
 import com.cabme.app.ui.theme.DividerGray
 import com.cabme.app.ui.theme.GoldPrimary
 import com.cabme.app.ui.theme.Primary
@@ -72,24 +76,14 @@ fun DiamondArrowButton(
     modifier: Modifier = Modifier,
     enabled: Boolean = true
 ) {
-    Box(
+    Image(
+        painter = painterResource(id = R.drawable.ic_next_arrow),
+        contentDescription = "Next",
         modifier = modifier
             .size(56.dp)
-            .rotate(45f)
-            .clip(RoundedCornerShape(8.dp))
-            .background(if (enabled) TextGray else TextGray.copy(alpha = 0.5f))
-            .clickable(enabled = enabled) { onClick() },
-        contentAlignment = Alignment.Center
-    ) {
-        Icon(
-            imageVector = Icons.AutoMirrored.Filled.ArrowForward,
-            contentDescription = "Next",
-            tint = Color.White,
-            modifier = Modifier
-                .size(28.dp)
-                .rotate(-45f)
-        )
-    }
+            .alpha(if (enabled) 1f else 0.5f)
+            .clickable(enabled = enabled) { onClick() }
+    )
 }
 
 @Composable
